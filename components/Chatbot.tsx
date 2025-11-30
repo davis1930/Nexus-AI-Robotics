@@ -61,7 +61,7 @@ export const Chatbot: React.FC<ChatbotProps> = ({ isVisible, onHide }) => {
     setIsLoading(true);
 
     try {
-      const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+      const ai = new GoogleGenAI({ apiKey: import.meta.env.VITE_API_KEY });
       const response = await ai.models.generateContent({
         model: 'gemini-2.5-flash', // Faster model for quick interactions
         contents: userText,
